@@ -1,0 +1,27 @@
+#include <opencv2/core.hpp>
+#include <opencv2/imgcodecs.hpp>
+#include <opencv2/highgui.hpp>
+#include <opencv2\opencv.hpp>
+#include <iostream>
+#include <string>
+
+using namespace cv;
+
+int main(int argc, char** argv) {
+{
+    Mat3b bgr = imread("C:/Users/Janek/Desktop/ImageProcessing/Plakietki/1.jpg");
+
+    Mat3b bgr_inv = ~bgr; 
+    Mat3b hsv_inv;
+    cvtColor(bgr_inv, hsv_inv, COLOR_BGR2HSV);
+
+    Mat1b mask; 
+	inRange(hsv_inv, Scalar(100, 120, 0), Scalar(140, 255, 255),mask); // 
+
+   	 imshow("Mask", mask);
+	imshow("Original Image", bgr);
+    waitKey();
+
+    return 0;
+}
+}
