@@ -1,0 +1,137 @@
+#include <opencv2/core.hpp>
+#include <opencv2/imgcodecs.hpp>
+#include <opencv2/highgui.hpp>
+#include <opencv2\opencv.hpp>
+#include <iostream>
+#include <string>
+#include "opencv2/imgproc/imgproc.hpp"
+
+using namespace cv;
+using namespace std;
+
+int checkGreen(IplImage* src)
+{
+	IplImage* copy = cvCreateImage(cvGetSize(src), 8, 3);
+	CvScalar s, c; // create two scalar variables
+	int counter = 0;
+	for (int i = 0; i < (src->height); i++)
+	{
+		for (int j = 0; j < (src->width); j++)
+		{
+			s = cvGet2D(src, i, j); //Get the RGB values of src's i,j into a scalar s
+			if ((s.val[2] < 50) && (s.val[1] > 100) && (s.val[0] < 100))
+				//Remember s.val[2],s.val[1],s.val[0] are RGB correspondingly
+			{ //ie. if the pixel is predominantly Green
+				c.val[2] = 0;//Set R to 0
+				c.val[1] = 255;//Set G to 255
+				c.val[0] = 0;//Set B to 0
+				counter++;
+			}
+		}
+
+	}
+
+	return counter;
+}
+
+
+
+int checkBlue(IplImage* src)
+{
+	IplImage* copy = cvCreateImage(cvGetSize(src), 8, 3);
+	CvScalar s, c; // create two scalar variables
+	int counter = 0;
+	for (int i = 0; i < (src->height); i++)
+	{
+		for (int j = 0; j < (src->width); j++)
+		{
+			s = cvGet2D(src, i, j); //Get the RGB values of src's i,j into a scalar s
+			if ((s.val[2] < 50) && (s.val[1] < 100) && (s.val[0] > 100))
+				//Remember s.val[2],s.val[1],s.val[0] are RGB correspondingly
+			{ //ie. if the pixel is predominantly Green
+				c.val[2] = 0;//Set R to 0
+				c.val[1] = 0;//Set G to 255
+				c.val[0] = 255;//Set B to 0
+				counter++;
+			}
+		}
+
+	}
+
+	return counter;
+}
+
+
+
+int checkRed(IplImage* src)
+{
+	IplImage* copy = cvCreateImage(cvGetSize(src), 8, 3);
+	CvScalar s, c; // create two scalar variables
+	int counter = 0;
+	for (int i = 0; i < (src->height); i++)
+	{
+		for (int j = 0; j < (src->width); j++)
+		{
+			s = cvGet2D(src, i, j); //Get the RGB values of src's i,j into a scalar s
+			if ((s.val[2] > 100) && (s.val[1] < 50) && (s.val[0] < 100))
+				//Remember s.val[2],s.val[1],s.val[0] are RGB correspondingly
+			{ //ie. if the pixel is predominantly Green
+				c.val[2] = 255;//Set R to 0
+				c.val[1] = 0;//Set G to 255
+				c.val[0] = 0;//Set B to 0
+				counter++;
+			}
+		}
+
+	}
+
+	return counter;
+}
+
+
+int checkYellow(IplImage* src)
+{
+	IplImage* copy = cvCreateImage(cvGetSize(src), 8, 3);
+	CvScalar s, c; // create two scalar variables
+	int counter = 0;
+	for (int i = 0; i < (src->height); i++)
+	{
+		for (int j = 0; j < (src->width); j++)
+		{
+			s = cvGet2D(src, i, j); //Get the RGB values of src's i,j into a scalar s
+			if ((s.val[2] > 100) && (s.val[1] > 100) && (s.val[0] < 100))
+				//Remember s.val[2],s.val[1],s.val[0] are RGB correspondingly
+			{ //ie. if the pixel is predominantly Green
+				c.val[2] = 255;//Set R to 0
+				c.val[1] = 255;//Set G to 255
+				c.val[0] = 0;//Set B to 0
+				counter++;
+			}
+		}
+
+	}
+
+	return counter;
+}
+
+
+int main()
+{
+	char name[] = "C:/Users/Janek/Desktop/ImageProcessing/Plakietki/Green/1.jpg";
+	IplImage* src = cvLoadImage(name, 1); // Loading the image
+	if (int counter = checkGreen(src) > 100000) {
+		cout << "It's green!";
+	}
+	if (int counter = checkBlue(src) > 100000) {
+		cout << "It's blue!";
+	}
+	if (int counter = checkYellow(src) > 100000) {
+		cout << "It's yellow!";
+	}
+	if (int counter = checkRed(src) > 100000) {
+		cout << "It's red!";
+	}
+
+	waitKey();
+	return 0;
+}

@@ -1,0 +1,18 @@
+int main(int argc, char** argv) {
+	{
+		Mat3b bgr = imread("C:/Users/Janek/Desktop/ImageProcessing/Plakietki/Blue/1.jpg");
+
+		Mat3b bgr_inv = ~bgr;
+		Mat3b hsv_inv;
+		cvtColor(bgr_inv, hsv_inv, COLOR_BGR2HSV);
+
+		Mat1b mask;
+		inRange(hsv_inv, Scalar(110, 50, 50), Scalar(130, 255, 255), mask); // 
+
+		imshow("Mask", mask);
+		imshow("Original Image", bgr);
+		waitKey();
+
+		return 0;
+	}
+}
