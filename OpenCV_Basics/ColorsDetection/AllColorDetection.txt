@@ -99,7 +99,7 @@ int checkYellow(IplImage* src)
 		for (int j = 0; j < (src->width); j++)
 		{
 			s = cvGet2D(src, i, j); //Get the RGB values of src's i,j into a scalar s
-			if ((s.val[2] > 100) && (s.val[1] > 100) && (s.val[0] < 100))
+			if ((s.val[2] > 130) && (s.val[1] > 130) && (s.val[0] < 100))
 				//Remember s.val[2],s.val[1],s.val[0] are RGB correspondingly
 			{ //ie. if the pixel is predominantly Green
 				c.val[2] = 255;//Set R to 0
@@ -111,26 +111,39 @@ int checkYellow(IplImage* src)
 
 	}
 
+
 	return counter;
 }
 
 
 int main()
 {
-	char name[] = "C:/Users/Janek/Desktop/ImageProcessing/Plakietki/Green/1.jpg";
+	char name[] = "C:/Users/Janek/Desktop/ImageProcessing/Plakietki/Yellow/1.jpg";
+	Mat3b bgr = imread("C:/Users/Janek/Desktop/ImageProcessing/Plakietki/Yellow/1.jpg");
 	IplImage* src = cvLoadImage(name, 1); // Loading the image
-	if (int counter = checkGreen(src) > 100000) {
+	int counterGreen, counterBlue, counterYellow, counterRed;
+	if (counterGreen = checkGreen(src) > 30000) {
 		cout << "It's green!";
 	}
-	if (int counter = checkBlue(src) > 100000) {
+	if (counterBlue = checkBlue(src) > 30000) {
 		cout << "It's blue!";
 	}
-	if (int counter = checkYellow(src) > 100000) {
+	if (counterYellow = checkYellow(src) > 30000) {
 		cout << "It's yellow!";
 	}
-	if (int counter = checkRed(src) > 100000) {
+	if (counterRed = checkRed(src) > 30000) {
 		cout << "It's red!";
 	}
+	imshow("Image", bgr);
+	cout << endl;
+	cout << checkGreen(src);
+	cout << endl;
+	cout << checkBlue(src);
+	cout << endl;
+	cout << checkYellow(src);
+	cout << endl;
+	cout << checkRed(src);
+
 
 	waitKey();
 	return 0;
