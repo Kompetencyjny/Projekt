@@ -1,0 +1,124 @@
+#include <iostream>
+#include "opencv2/highgui/highgui.hpp"
+#include "opencv2/imgproc/imgproc.hpp"
+#include <string.h>
+
+using namespace cv;
+using namespace std;
+
+void colourDetect(int, int, int, int, int, int, string);
+
+//int counter = countNonZero(mask);
+//cout << counter;
+
+int counter;
+int main(int argc, char** argv)
+{
+	
+	int a;
+	while (true)
+	{
+		counter = 0;
+		cout << "Podaj zmienna" << endl << "1. Red" << endl << "2. Blue" << endl << "3. Yellow" << endl << "4. Green"<<endl;
+		cin >> a;
+		switch (a)
+		{
+		case 1:
+			colourDetect(166, 189, 176, 255, 86, 255,"Red");
+			break;
+		case 2:
+			colourDetect(91, 114, 119, 255, 58, 255, "Blue");
+			break;
+		case 3:
+			colourDetect(10, 23, 170, 255, 49, 255, "Yellow");
+			break;
+		case 4:
+			colourDetect(29, 93, 66, 255, 49, 111, "Green");
+			break;
+		default:
+			cout << "bb"<<endl;
+			return 0;
+			break;
+		}
+
+		cout << "Koniec"<<endl;
+	}
+	return 0;
+}
+void colourDetect(int iLowH, int iHighH, int iLowS, int iHighS, int iLowV, int iHighV, string colour)
+{
+	VideoCapture cap(0);
+	//Capture a temporary image from the camera
+	Mat imgTmp;
+	cap.read(imgTmp);
+
+	//Create a black image with the size as the camera output
+	Mat imgLines = Mat::zeros(imgTmp.size(), CV_8UC3);;
+
+
+	while (true)
+	{
+		Mat imgOriginal;
+
+		bool bSuccess = cap.read(imgOriginal); // read a new frame from video
+
+
+
+		if (!bSuccess) //if not success, break loop
+		{
+			cout << "Cannot read a frame from video stream" << endl;
+			break;
+		}
+
+		Mat imgHSV;
+
+		cvtColor(imgOriginal, imgHSV, COLOR_BGR2HSV); //Convert the captured frame from BGR to HSV
+
+		Mat imgThresholded;
+
+		inRange(imgHSV, Scalar(iLowH, iLowS, iLowV), Scalar(iHighH, iHighS, iHighV), imgThresholded); //Threshold the image
+
+																									  //morphological opening (removes small objects from the foreground)
+		erode(imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(5, 5)));
+		dilate(imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(5, 5)));
+
+		//morphological closing (removes small holes from the foreground)
+		dilate(imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(5, 5)));
+		erode(imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(5, 5)));
+
+
+		imshow("Thresholded Image", imgThresholded); //show the thresholded image
+
+		imgOriginal = imgOriginal + imgLines;
+		imshow("Original", imgOriginal); //show the original image
+
+		if (waitKey(30) == 27) //wait for 'esc' key press for 30ms. If 'esc' key is pressed, break loop
+		{
+			cout << "esc key is pressed by user" << endl;
+			destroyAllWindows();
+			break;
+		}
+		counter = countNonZero(imgThresholded);
+		//cout << counter<<endl;
+		if (counter > 35000)
+		{
+			cout << colour << " block on the screen" << endl;
+		}
+		waitKey(0);
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
