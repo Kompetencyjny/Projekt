@@ -1,0 +1,352 @@
+#include <iostream>
+#include "opencv2/highgui/highgui.hpp"
+#include "opencv2/imgproc/imgproc.hpp"
+
+using namespace cv;
+using namespace std;
+
+void redDetect();
+void blueDetect();
+void greenDetect();
+void yellowDetect();
+
+
+int main(int argc, char** argv)
+{
+	int a;
+	while (true)
+	{
+		cout << "Podaj zmienna" << endl << "red" << endl << "blue" << endl << "yellow" << endl << "green";
+		cin >> a;
+		switch (a)
+		{
+		case 1:
+			redDetect();
+			break;
+		case 2:
+			blueDetect();
+			break;
+		case 3:
+			yellowDetect();
+			break;
+		case 4:
+			greenDetect();
+			break;
+		default:
+			cout << "bb";
+			return 0;
+			break;
+		}
+
+		cout << "Koniec";
+	}
+	return 0;
+}
+
+void redDetect()
+{
+	VideoCapture cap(0); //capture the video from webcam
+
+
+	int iLowH = 166;
+	int iHighH = 189;
+
+	int iLowS = 176;
+	int iHighS = 255;
+
+	int iLowV = 86;
+	int iHighV = 255;
+
+
+	int iLastX = -1;
+	int iLastY = -1;
+
+	//Capture a temporary image from the camera
+	Mat imgTmp;
+	cap.read(imgTmp);
+
+	//Create a black image with the size as the camera output
+	Mat imgLines = Mat::zeros(imgTmp.size(), CV_8UC3);;
+
+	while (true)
+	{
+		Mat imgOriginal;
+
+		bool bSuccess = cap.read(imgOriginal); // read a new frame from video
+
+
+
+		if (!bSuccess) //if not success, break loop
+		{
+			cout << "Cannot read a frame from video stream" << endl;
+			break;
+		}
+
+		Mat imgHSV;
+
+		cvtColor(imgOriginal, imgHSV, COLOR_BGR2HSV); //Convert the captured frame from BGR to HSV
+
+		Mat imgThresholded;
+
+		inRange(imgHSV, Scalar(iLowH, iLowS, iLowV), Scalar(iHighH, iHighS, iHighV), imgThresholded); //Threshold the image
+
+																									  //morphological opening (removes small objects from the foreground)
+		erode(imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(5, 5)));
+		dilate(imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(5, 5)));
+
+		//morphological closing (removes small holes from the foreground)
+		dilate(imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(5, 5)));
+		erode(imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(5, 5)));
+
+
+		imshow("Thresholded Image", imgThresholded); //show the thresholded image
+
+		imgOriginal = imgOriginal + imgLines;
+		imshow("Original", imgOriginal); //show the original image
+
+		if (waitKey(30) == 27) //wait for 'esc' key press for 30ms. If 'esc' key is pressed, break loop
+		{
+			cout << "esc key is pressed by user" << endl;
+			destroyAllWindows();
+			break;
+		}
+		waitKey(0);
+	}
+}
+
+
+void blueDetect()
+{
+	VideoCapture cap(0); //capture the video from webcam
+
+
+	int iLowH = 91;
+	int iHighH = 114;
+
+	int iLowS = 119;
+	int iHighS = 255;
+
+	int iLowV = 58;
+	int iHighV = 255;
+
+
+	int iLastX = -1;
+	int iLastY = -1;
+
+	//Capture a temporary image from the camera
+	Mat imgTmp;
+	cap.read(imgTmp);
+
+	//Create a black image with the size as the camera output
+	Mat imgLines = Mat::zeros(imgTmp.size(), CV_8UC3);;
+
+
+	while (true)
+	{
+		Mat imgOriginal;
+
+		bool bSuccess = cap.read(imgOriginal); // read a new frame from video
+
+
+
+		if (!bSuccess) //if not success, break loop
+		{
+			cout << "Cannot read a frame from video stream" << endl;
+			break;
+		}
+
+		Mat imgHSV;
+
+		cvtColor(imgOriginal, imgHSV, COLOR_BGR2HSV); //Convert the captured frame from BGR to HSV
+
+		Mat imgThresholded;
+
+		inRange(imgHSV, Scalar(iLowH, iLowS, iLowV), Scalar(iHighH, iHighS, iHighV), imgThresholded); //Threshold the image
+
+																									  //morphological opening (removes small objects from the foreground)
+		erode(imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(5, 5)));
+		dilate(imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(5, 5)));
+
+		//morphological closing (removes small holes from the foreground)
+		dilate(imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(5, 5)));
+		erode(imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(5, 5)));
+
+
+		imshow("Thresholded Image", imgThresholded); //show the thresholded image
+
+		imgOriginal = imgOriginal + imgLines;
+		imshow("Original", imgOriginal); //show the original image
+
+		if (waitKey(30) == 27) //wait for 'esc' key press for 30ms. If 'esc' key is pressed, break loop
+		{
+			cout << "esc key is pressed by user" << endl;
+			destroyAllWindows();
+			break;
+		}
+		waitKey(0);
+	}
+}
+
+
+
+
+
+
+void yellowDetect()
+{
+	VideoCapture cap(0); //capture the video from webcam
+
+
+	int iLowH = 10;
+	int iHighH = 23;
+
+	int iLowS = 170;
+	int iHighS = 255;
+
+	int iLowV = 49;
+	int iHighV = 255;
+
+
+	int iLastX = -1;
+	int iLastY = -1;
+
+	//Capture a temporary image from the camera
+	Mat imgTmp;
+	cap.read(imgTmp);
+
+	//Create a black image with the size as the camera output
+	Mat imgLines = Mat::zeros(imgTmp.size(), CV_8UC3);;
+
+
+	while (true)
+	{
+		Mat imgOriginal;
+
+		bool bSuccess = cap.read(imgOriginal); // read a new frame from video
+
+
+
+		if (!bSuccess) //if not success, break loop
+		{
+			cout << "Cannot read a frame from video stream" << endl;
+			break;
+		}
+
+		Mat imgHSV;
+
+		cvtColor(imgOriginal, imgHSV, COLOR_BGR2HSV); //Convert the captured frame from BGR to HSV
+
+		Mat imgThresholded;
+
+		inRange(imgHSV, Scalar(iLowH, iLowS, iLowV), Scalar(iHighH, iHighS, iHighV), imgThresholded); //Threshold the image
+
+																									  //morphological opening (removes small objects from the foreground)
+		erode(imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(5, 5)));
+		dilate(imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(5, 5)));
+
+		//morphological closing (removes small holes from the foreground)
+		dilate(imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(5, 5)));
+		erode(imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(5, 5)));
+
+
+		imshow("Thresholded Image", imgThresholded); //show the thresholded image
+
+		imgOriginal = imgOriginal + imgLines;
+		imshow("Original", imgOriginal); //show the original image
+
+		if (waitKey(30) == 27) //wait for 'esc' key press for 30ms. If 'esc' key is pressed, break loop
+		{
+			cout << "esc key is pressed by user" << endl;
+			destroyAllWindows();
+			break;
+		}
+		waitKey(0);
+	}
+}
+
+
+
+
+
+
+
+
+
+
+void greenDetect()
+{
+	VideoCapture cap(0); //capture the video from webcam
+
+
+	int iLowH = 29;
+	int iHighH = 93;
+
+	int iLowS = 66;
+	int iHighS = 255;
+
+	int iLowV = 49;
+	int iHighV = 111;
+
+
+	int iLastX = -1;
+	int iLastY = -1;
+
+	//Capture a temporary image from the camera
+	Mat imgTmp;
+	cap.read(imgTmp);
+
+	//Create a black image with the size as the camera output
+	Mat imgLines = Mat::zeros(imgTmp.size(), CV_8UC3);;
+
+
+	while (true)
+	{
+		Mat imgOriginal;
+
+		bool bSuccess = cap.read(imgOriginal); // read a new frame from video
+
+
+
+		if (!bSuccess) //if not success, break loop
+		{
+			cout << "Cannot read a frame from video stream" << endl;
+			break;
+		}
+
+		Mat imgHSV;
+
+		cvtColor(imgOriginal, imgHSV, COLOR_BGR2HSV); //Convert the captured frame from BGR to HSV
+
+		Mat imgThresholded;
+
+		inRange(imgHSV, Scalar(iLowH, iLowS, iLowV), Scalar(iHighH, iHighS, iHighV), imgThresholded); //Threshold the image
+
+																									  //morphological opening (removes small objects from the foreground)
+		erode(imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(5, 5)));
+		dilate(imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(5, 5)));
+
+		//morphological closing (removes small holes from the foreground)
+		dilate(imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(5, 5)));
+		erode(imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(5, 5)));
+
+
+		imshow("Thresholded Image", imgThresholded); //show the thresholded image
+
+		imgOriginal = imgOriginal + imgLines;
+		imshow("Original", imgOriginal); //show the original image
+
+		if (waitKey(30) == 27) //wait for 'esc' key press for 30ms. If 'esc' key is pressed, break loop
+		{
+			cout << "esc key is pressed by user" << endl;
+			destroyAllWindows();
+			break;
+		}
+		waitKey(0);
+	}
+}
+
+
+
+
+
+
