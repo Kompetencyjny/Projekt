@@ -136,7 +136,7 @@ void blueDetect()
 	int iLowS = 63;
 	int iHighS = 255;
 
-	int iLowV = 21;
+	int iLowV = 60;
 	int iHighV = 255;
 
 
@@ -305,7 +305,7 @@ void greenDetect()
 	int iHighS = 255;
 
 	int iLowV = 60;
-	int iHighV = 111;
+	int iHighV = 255;
 
 
 	int iLastX = -1;
