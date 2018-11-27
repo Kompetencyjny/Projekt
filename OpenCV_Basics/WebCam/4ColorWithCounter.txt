@@ -58,7 +58,7 @@ void redDetect()
 	int iLowS = 112;
 	int iHighS = 255;
 
-	int iLowV = 138;
+	int iLowV = 108;
 	int iHighV = 255;
 
 
