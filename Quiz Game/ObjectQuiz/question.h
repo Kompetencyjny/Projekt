@@ -15,7 +15,7 @@ class Question
     string A[5],B[5],C[5],D[5];
     int questionNumber;
     string correct[5];
-    string answer;
+    char answer;
     int points = 0;
     string nick;
     int menuChoice = 0;
