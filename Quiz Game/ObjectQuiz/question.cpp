@@ -27,11 +27,11 @@ void Question::showMenu()
     system("cls");
     cout<<"==============================================================================="<<endl;
     SetConsoleTextAttribute(uchwyt, 14);//ZMIEN KOLOR NA NR 14=YELLOW
-    cout<<"                                   WORLD QUIZ"<<endl;
+    cout<<"                                 WELCOME TO QUIZY!"<<endl;
     SetConsoleTextAttribute(uchwyt, 15);//PRZYWROC KOLOR BIALY
     cout<<"==============================================================================="<<endl;
     SetConsoleTextAttribute(uchwyt, 12);
-    cout<<"                              CHOOSE YOUR DESTINY "<<char(2)<<endl;
+    cout<<"                                                        "<<char(2)<<endl;
     SetConsoleTextAttribute(uchwyt, 15);
     cout<<"==============================================================================="<<endl;
     SetConsoleTextAttribute(uchwyt, 11);
@@ -42,7 +42,7 @@ void Question::showMenu()
     SetConsoleTextAttribute(uchwyt, 15);
     cout<<"==============================================================================="<<endl;
     SetConsoleTextAttribute(uchwyt, 12);
-    cout<<"Wybierz opcje: ";
+    cout<<"CHOOSE OPTION: ";
     SetConsoleTextAttribute(uchwyt, 15);
     cin>>choice;
 }
@@ -53,15 +53,15 @@ void Question::howToPlay()
     cout<<"==============================================================================="<<endl;
     cout<<"                             HOW TO PLAY INSTRUCTION"<<endl;
     cout<<"==============================================================================="<<endl;
-    cout<<"                 JESLI CHCESZ WYBRAC KTORAS Z ODPOWIEDZI TO:"<<endl;
+    cout<<"                            HOW TO CHOOSE YOUR ANSWEAR:"<<endl;
     SetConsoleTextAttribute(uchwyt, 4);
-    cout<<"                PODNIES CZERWONA FLAGE ABY WYBRAC ODPOWIEDZ A."<<endl;
+    cout<<"                      IF YOU WANT CHOOSE ANSWER A SHOW RED FLAG."<<endl;
     SetConsoleTextAttribute(uchwyt, 1);
-    cout<<"                PODNIES NIEBIESKA FLAGE ABY WYBRAC ODPOWIEDZ B."<<endl;
+    cout<<"                      IF YOU WANT CHOOSE ANSWER B SHOW YELLOW FLAG."<<endl;
     SetConsoleTextAttribute(uchwyt, 2);
-    cout<<"                 PODNIES ZIELONA FLAGE ABY WYBRAC ODPOWIEDZ C."<<endl;
+    cout<<"                      IF YOU WANT CHOOSE ANSWER C SHOW BLUE FLAG."<<endl;
     SetConsoleTextAttribute(uchwyt, 14);
-    cout<<"                    PODNIES ZOLTA ABY WYBRAC ODPOWIEDZ D."<<endl;
+    cout<<"                      IF YOU WANT CHOOSE ANSWER D SHOW GREEN FLAG."<<endl;
     cout<<"==============================================================================="<<endl;
     system("pause");
 }
@@ -89,7 +89,7 @@ void Question::switchChoice()
         case 2: Highscore(); break;
         case 3: howToPlay();break;
         case 4: {
-                    cout<<endl<<"Koniec Quizu!"<<endl;
+                    cout<<endl<<"END OF QUIZ!"<<endl;
                     exit(0);
                 } break;
         default: wrongOption=true; break;
@@ -103,7 +103,7 @@ void Question::checkChoice()
         cout<<endl;
         SetConsoleTextAttribute(uchwyt, 12);
         cout<<"==============================================================================="<<endl;
-        cout<<"                         Nie ma takiej opcji w menu!"<<endl;
+        cout<<"                       YOU DIDN'T CHOOSE CORRECT OPTION!"<<endl;
         cout<<"==============================================================================="<<endl<<endl;
         SetConsoleTextAttribute(uchwyt, 15);
         system("pause");
@@ -117,7 +117,7 @@ void Question::read()
 
    if(plik.good()==false)
    {
-      cout<<"Nie udalo sie otworzyc pliku!";
+      cout<<"OPENING FILE FAILED!";
       exit(0);
    }
 
@@ -152,7 +152,7 @@ void Question::showQuestion()
     read();
     system("cls");
     cout<<"==============================================================================="<<endl;
-    cout<<"                               WORLD QUIZ START"<<endl;
+    cout<<"                               QUIZY START"<<endl;
     cout<<"==============================================================================="<<endl;
     points = 0;
     for (int i=0; i<=4; i++)
@@ -161,13 +161,18 @@ void Question::showQuestion()
         cout<<endl<<content[i]<<endl;
         SetConsoleTextAttribute(uchwyt, 15);
         cout<<"==============================================================================="<<endl;
+        SetConsoleTextAttribute(uchwyt, 4);
         cout<<"A. "<<A[i]<<endl;
+        SetConsoleTextAttribute(uchwyt, 14);
         cout<<"B. "<<B[i]<<endl;
+        SetConsoleTextAttribute(uchwyt, 1);
         cout<<"C. "<<C[i]<<endl;
+        SetConsoleTextAttribute(uchwyt, 2);
         cout<<"D. "<<D[i]<<endl;
+        SetConsoleTextAttribute(uchwyt, 15);
         cout<<"==============================================================================="<<endl;
         SetConsoleTextAttribute(uchwyt, 14);
-        cout<<"Pokaz kartke z kolorem odpowiedzi :)) ";
+        cout<<"SHOW UR ANSWER: ";
         answer= colourChooser();;
 
         transform(answer.begin(), answer.end(), answer.begin(), ::tolower);
@@ -183,14 +188,14 @@ bool Question::check(int i)
     if(answer==correct[i])
     {
         SetConsoleTextAttribute(uchwyt, 10);
-        cout<<endl<<"+1 PKT!"<<endl;
+        cout<<endl<<"+1 POINT!"<<endl;
         points++;
         return true;
     }
     else
     {
         SetConsoleTextAttribute(uchwyt, 12);
-        cout<<endl<<"Blad! Poprawna odpowiedz: "<<correct[i]<<endl;
+        cout<<endl<<"WRONG! CORRECT ANSWEAR: "<<correct[i]<<endl;
         summary();
         return false;
     }
@@ -199,10 +204,10 @@ bool Question::check(int i)
 void Question::summary()
 {
     SetConsoleTextAttribute(uchwyt, 11);
-    cout<<endl<<"Koniec Quizu!"<<endl;
-    cout<<endl<<"Podaj swoj nick: ";
+    cout<<endl<<"END OF QUIZ!"<<endl;
+    cout<<endl<<"INSERT YOUR NAME: ";
     cin>>nick;
-    cout<<nick<<" liczby twoich punktow -> ";
+    cout<<nick<<" YOUR SCORE -> ";
     SetConsoleTextAttribute(uchwyt, 15);
     cout<<points<<endl<<endl;
     system("pause");
@@ -236,7 +241,7 @@ void Question::show(bool _loadOnly)
 
    if (plik2.good()==false)
         {
-            cout<<"Problem z plikiem!"<<endl<<endl;
+            cout<<"Problem with file!"<<endl<<endl;
             exit(0);
         }
         while(getline(plik2,line))
@@ -245,13 +250,13 @@ void Question::show(bool _loadOnly)
                 {
                     osoby[lineNum]=line;
                     if(!loadOnly)
-                    cout<<"Osoba : \t"<<line<<endl;
+                    cout<<"Nickname : \t"<<line<<endl;
                 }
                 if(lineNum%2==1)
                 {
                     wyniki[lineNum]=line;
                     if(!loadOnly)
-                    cout<<"Wynik : \t"<<line<<endl;
+                    cout<<"Score : \t"<<line<<endl;
                 }
                 lineNum++;
             }
@@ -278,7 +283,7 @@ void Question::save(string _name,int _points)
 
    if (plik2.good()==false)
         {
-            cout<<"Problem z plikiem!"<<endl<<endl;
+            cout<<"Problem with file!"<<endl<<endl;
             exit(0);
         }
         while(getline(plik2,line))
@@ -305,7 +310,7 @@ void Question::save(string _name,int _points)
 
             if (plik3.good()==false)
                 {
-                    cout<<"Problem z plikiem!"<<endl<<endl;
+                    cout<<"Problem with file!"<<endl<<endl;
                     exit(0);
                 }
 
@@ -314,7 +319,7 @@ void Question::save(string _name,int _points)
                 sprintf((char*)tmp.c_str(), "%d", points);
                 string str = tmp.c_str();
 
-                cout<<"Pozycja\t :"<<position<<endl; // jaka pozycja w wynikach
+                cout<<"Position\t :"<<position<<endl; // jaka pozycja w wynikach
                 cin.sync();
                 cin.get();
 
