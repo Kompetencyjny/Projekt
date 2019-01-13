@@ -1,0 +1,360 @@
+Typ zmiennych o nazwie float przechowuje:
+liczby calkowite
+napisy
+liczby zmiennoprzecinkowe
+pojedyncze znaki
+c
+Wstrzymanie wykonania programu na czas 2 sekund uzyskasz instrukcja:
+Wait(2000)
+Stop(2000)
+Delay(2000)
+Sleep(2000)
+d
+Ktora deklaracja jest zapisana poprawnie?
+int x;
+integer x;
+x:integer;
+x=integer;
+a
+Z jakiego przedzialu zostanie wylosowana liczba: rand()%10+2
+0..9
+2..9
+2..11
+0..11
+c
+Ile razy wykona sie petla: for (int i=4; i>=-2; i--)
+ani razu
+nieskonczenie wiele razy
+6
+7
+d
+Kto wygral 49 Turniej Czterech Skoczni?
+Martin Schmitt
+Sven Hannawald
+Adam Malysz
+Janne Ahonen
+c
+Ile wynosi najdluzszy i ustany skok?
+240m
+239.5m
+248.5m
+246.5m
+d
+Ile razy Adam Malysz wygral Puchar Swiata?
+1
+2
+3
+4
+d
+Ile zwyciestw ma Gregor Schlierenzauer? (do dnia 13-01-2014)
+52
+49
+32
+55
+a
+Ile zlotych medali olimijskich ma Simon Ammann?
+4
+3
+2
+1
+a
+W systemach operacyjnych wiersz polecen oznaczamy skrotem
+CLP (ang. command line process)
+CLU (ang. command line user)
+CLO (ang. command line Open)
+CLI (ang. command line interface)
+d
+Ktore z podanych rozszerzen nalezy do pliku graficznego?
+.aif
+.png
+.swa
+.wav
+b
+Symbol klodki oznaczajacy polaczenie szyfrowane jest charakterystyczny dla protokolu:
+HTTP
+SSH
+FTP
+SSL
+d
+Domyslne profile uzytkownikow Windows XP sa przechowywane w folderze
+Roaming User Profile - na partycji rozruchowej.
+Documents and Settings.
+Profile - na partycji dodatkowej.
+Macierzystym - w pierwszym sektorze dysku twardego.
+b
+Ktora kombinacja klawiszy powoduje zaznaczenie wszystkich obiektow w otwartym folderze w Systemie Windows:
+Ctrl + O
+Ctrl + A
+Ctrl + X
+Ctrl + Z
+b
+Jak sa nazwane poszczegolne struny w gitarze?
+a,b,c,d,e,f
+E,a,d,g,h,e
+C,D,E,F,G,A
+E,d,c,h,a,g
+b
+Ktory z ponizszych akordow jest BAROWY?
+C
+A
+F
+D
+c
+Ktory z ponizszych akordow jest DUROWY?
+E
+e
+fis
+f6
+a
+Ile jest stron wiolinowych a ile basowych?
+2-basowe, 4-wiolinowe
+4-basowe, 2-wiolinowe
+1-basowe, 5-wiolinowych
+3-basowe, 3-wiolinowe
+d
+Czy G-dur to akord Basowy?
+Tak
+Nie
+Niema takiego akordu
+Mozna ten akord zagrac i tak i tak
+d
+Energia elektryczna w elektrowni jadrowej powstaje poprzez:
+uran ktory sam w sobie wytwarza energie elektryczna
+reakcje chemiczna uranu/plutonu z woda
+poruszanie wirnikow przez pare
+grupe naukowcow ktorzy kreca dynamo
+c
+Wypromieniowanie czasteczki helu z innej czasteczki to inaczej promieniowanie:
+alfa
+beta
+mikrofalowe
+jonizujace
+a
+Wybuch elektrowni w Czarnobylu byl:
+wybuchem podlozonej bomby
+wybuchem jadrowym
+wybuchem bomby biologicznej
+wybuchem pary wodnej
+d
+Plyn, ktory hamuje czynnosci tarczycy to:
+coca-cola
+lugola
+Woda demineralizowana
+zantho
+c
+Pierwsza bombe atomowa skonstruowali:
+Rosjanie
+Amerykanie
+Chinczycy
+Polacy
+b
+Whisky Jack Daniel's powstaje w:
+Warszawie
+Waszyngtonie
+Lynchburgu
+Wisconsin
+c
+Jesli chcemy wyprodukowac Gin, do zacieru nalezy dodac:
+jagody jalowca
+piolun
+kore debowa
+liscie klonu
+a
+Wzor ogolny alkoholu etylowego to:
+CH3OH
+C2H5OH
+HCOOH
+C6H13OH
+b
+Jak nazywa sie proces produkcji miodu pitnego:
+miodosytnia
+miodowanie
+miodalnosc
+miodosytnictwo
+d
+Ktora marka wodki w Polsce oferuje najszersza game smakow:
+Lubelska
+Stock
+Zytnia
+BOLS
+a
+Jack Daniel's produkuje whisky okreslana jako 'single barrel'. Oznacza to, ze:
+whisky zostala stworzona przez mieszanie roznych partii
+whisky zostala stworzona przez mieszanie jednej partii
+whisky pochodzi z tylko jednej beczki
+whisky zostala stworzona z pieciu beczek trzech ostatnich partii
+c
+Jasiem Wedrowniczkiem nazywamy:
+whisky Red Label
+wino francuskie Cotes du Rhone
+wino ryzowe, ktore przyszlo do nas z Azji
+wodke marki Krajowa
+a
+Ile czasu wedlug tradycji musi odlezec 'szkocka' zanim zostanie rozlana do butelek:
+rok
+dwa lata
+trzy lata
+dziesiec lat
+b
+Glownym skladnikiem Ajerkoniaku sa:
+jajka
+majonez
+czarna herbata
+trufle
+a
+Ulubionym napojem francuskich dekadentow byla:
+wodka
+zielona herbata z whisky
+woda mineralna
+zielona wrozka
+d
+Zielona Wrozka to inaczej:
+absynt
+sliwowica
+Tequila
+Cachaca
+a
+Wskaz prawidlowe rownanie fermentacji alkoholowej:
+cukier + ziemniaki -> alkohol
+Woda + drozdze -> alkohol
+cukier + drozdze -> alkohol
+alkohol + sok jablkowy -> denaturat
+c
+Wskaz prawidlowa liste najpopularniejszych rytualow spozywania absyntu:
+rytual: ognia, ziemi, wody
+rytual: cyklonu, ognia, ziemi
+rytual: powietrza, polski, wody
+rytual: ognia, powietrza, wody
+d
+Kahlua to:
+likier na bazie kawy
+likier kokosowy z dodatkiem dzikiej rozy
+likier na bazie jablek i cynamonu
+likier jablkowy
+a
+Likier pomaranczowy nazywany jest:
+Baileys
+Manzana
+Passoa
+Cointreau
+d
+Matrix to dzielo rezyserskie:
+David Lynch
+L.A. Wachowski
+Christopher Nolan
+Steven Spielberg
+b
+Kto zdradzil towarzyszy w pierwszym Matrixie?
+Cypher
+Dozer
+Tank
+Niobe
+d
+Jak nazywa sie ostatnie ludzkie miasto, ktore chca zniszczyc maszyny?
+Nabuchodonozor
+Zion
+Logos
+Village
+b
+Ktorym z kolei Wybrancem byl Neo?
+3
+4
+5
+6
+d
+Jak nazywal sie program broniacy Wyroczni? 
+Train man
+Merowing
+Klucznik
+Serafin
+d
+Ile dni Lazarz przebywal w grobie, zanim go wskrzeszono?
+2
+3
+4
+5
+c
+Ile srebrnikow otrzymal Judasz za zdrade Jezusa?
+12
+20
+24
+30
+d
+Ile dni Jonasz przebywal we wnetrznosciach ryby?
+3
+7
+12
+14
+a
+Ile zon mial Salomon?
+1
+2
+30
+700
+d
+Jaki aniol ukazal sie Maryi przy tzw. zwiastowaniu anielskim?
+Michal
+Gabriel
+Rafael
+Raziel
+b
+Kto byl selekcjonerem reprezentacji Polski? 
+Jacek Gmoch
+Grzegorz Lato
+Kazimierz Deyna
+Wlodzimierz Lubanski
+a
+Kto wygral Mistrzostwa Swiata w 2002 roku?
+Francja
+Brazylia
+Hiszpania
+Niemcy
+b
+Jakie najwyzsze miejsce Polska uzyskala na Mistrzostwach Swiata?
+6
+4
+3
+2
+c
+Kto zwyciezyl w plebiscycie i otrzymal Zlota Pilke w roku 2000?
+Luis Figo
+Zinedine Zidane
+Ronaldo
+Rivaldo
+a
+Ktora druzyna zdobyla najwiecej tytulow Mistrza Polski?
+Ruch Chorzow
+Legia Warszawa
+Wisla Krakow
+Lech Poznan
+a
+Europa: Jaka jest stolica Moldawii? 
+Tallin
+Vaduz
+Kiszyniow
+Bukareszt
+c
+Azja: Jaka jest stolica Kambodzy? 
+Phnom Penh
+Rangun
+Aszchabad
+Taszkent
+a
+Afryka: Jaka jest stolica Nigerii? 
+Nairobi
+Luanda
+Aszchabad
+Abudza
+d
+Ameryka Poludniowa: Jaka jest stolica Chile? 
+Asuncion
+La Paz
+Santiago
+Montevideo
+c
+Australia i Oceania: Jaka jest stolica Nowej Zelandii? 
+Wellington
+Port Moresby
+Suwa
+Apia
+a
