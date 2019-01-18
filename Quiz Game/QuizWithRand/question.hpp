@@ -1,21 +1,25 @@
 #include "opencv2/highgui/highgui.hpp"
 #include "opencv2/imgproc/imgproc.hpp"
-#include <iostream>
 #include <fstream>
 #include <cstdlib>
 #include <algorithm>
 #include <string>
 #include <windows.h>
+#include <time.h>
+#include <iostream>
+#include "windows.h" 
+
+#define QuizSize 60
 
 using namespace std;
 class Question
 {
    public:
 
-    string content[60];
-    string A[60],B[60],C[60],D[60];
+    string content[QuizSize];
+    string A[QuizSize],B[QuizSize],C[QuizSize],D[QuizSize];
     int questionNumber;
-    string correct[60];
+    string correct[QuizSize];
     string answer;
     int points = 0;
     string nick;

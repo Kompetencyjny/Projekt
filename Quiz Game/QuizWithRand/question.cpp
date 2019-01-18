@@ -1,25 +1,9 @@
-#include "opencv2/highgui/highgui.hpp"
-#include "opencv2/imgproc/imgproc.hpp"
-#include <iostream>
 #include "question.hpp"
-#include <fstream>
-#include <cstdlib>
-#include <algorithm>
-#include <string>
-#include <windows.h>
-#include <time.h>
-
+#include "cv.cpp"
 using namespace cv;
 using namespace std;
 
-int frame=0;
-int counter = 0;
-
-char redDetect();
-char blueDetect();
-char greenDetect();
-char yellowDetect();
-char colourChooser();
+CV Vision;
 
 void Question::showMenu()
 {
@@ -155,9 +139,9 @@ void Question::showQuestion()
     cout<<"==============================================================================="<<endl;
     cout<<"                               QUIZY START"<<endl;
     cout<<"==============================================================================="<<endl;
-    for (int i=0; i<=59; i++)
+    for (int i=0; i<QuizSize; i++)
     {
-		randomowa = rand() % 60;
+		randomowa = rand() % QuizSize;
 		SetConsoleTextAttribute(uchwyt, 14);
         cout<<endl<<content[randomowa]<<endl;
         SetConsoleTextAttribute(uchwyt, 15);
@@ -173,10 +157,10 @@ void Question::showQuestion()
         SetConsoleTextAttribute(uchwyt, 15);
         cout<<"==============================================================================="<<endl;
         SetConsoleTextAttribute(uchwyt, 14);
+		Sleep(8000);
         cout<<"SHOW UR ANSWER: ";
-		answer = colourChooser();;
+		answer = Vision.colourPicker();
 
-        //transform(answer.begin(), answer.end(), answer.begin(), ::tolower);
         if(answerCheck == check(randomowa))
         {
             break;
@@ -213,7 +197,6 @@ void Question::summary()
     cout<<points<<endl<<endl;
 	save(nick,points);
     system("pause");
-    //showMenu();
 }
 void Question::Highscore()
 {
@@ -222,8 +205,6 @@ void Question::Highscore()
     cout<<endl<<"                                   HIGHSCORE"<<endl;
     cout<<"==============================================================================="<<endl;
     show(false);
-    //cin.sync();
-    //cin.get();
     system("pause");
 }
 
@@ -345,315 +326,3 @@ void Question::save(string _name,int _points)
             }
 }
 
-char colourChooser() {
-	//a - czerwony
-	//b - zolty
-	//c - niebieski
-	//d - zielony
-	while ((redDetect() == 'e' && yellowDetect() == 'e'&& blueDetect() == 'e'&& greenDetect() == 'e')) {
-		if (redDetect() == 'a') {
-			//cout << "RED DONE!!!!!!!!!!!!!";
-			return 'a';
-		}
-		if (yellowDetect() == 'b') {
-			//cout << "Yellow DONE!!!!!!!!!!!!!";
-			return 'b';
-		}
-		if (blueDetect() == 'c') {
-			//cout << "Blue DONE!!!!!!!!!!!!!";
-			return 'c';
-		}
-		if (greenDetect() == 'd') {
-			//cout << "Green DONE!!!!!!!!!!!!!";
-			return 'd';
-		}
-	}
-	//return 'e';
-}
-
-
-char redDetect()
-{
-	VideoCapture cap(0); //capture the video from webcam
-	int iLowH = 0;
-	int iHighH = 11;
-	int iLowS = 112;
-	int iHighS = 255;
-	int iLowV = 108;
-	int iHighV = 255;
-
-	//Capture a temporary image from the camera
-	Mat imgTmp;
-	cap.read(imgTmp);
-
-	//Create a black image with the size as the camera output
-	Mat imgLines = Mat::zeros(imgTmp.size(), CV_8UC3);;
-
-	while (true)
-	{
-		Mat imgOriginal;
-
-		bool bSuccess = cap.read(imgOriginal); // read a new frame from video
-
-
-
-		if (!bSuccess) //if not success, break loop
-		{
-			cout << "Cannot read a frame from video stream RED" << endl;
-			break;
-		}
-
-		Mat imgHSV;
-
-		cvtColor(imgOriginal, imgHSV, COLOR_BGR2HSV); //Convert the captured frame from BGR to HSV
-
-		Mat imgThresholded;
-
-		inRange(imgHSV, Scalar(iLowH, iLowS, iLowV), Scalar(iHighH, iHighS, iHighV), imgThresholded); //Threshold the image
-
-																									  //morphological opening (removes small objects from the foreground)
-		erode(imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(5, 5)));
-		dilate(imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(5, 5)));
-
-		//morphological closing (removes small holes from the foreground)
-		dilate(imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(5, 5)));
-		erode(imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(5, 5)));
-
-		counter = countNonZero(imgThresholded);
-
-		if (counter > 35000)
-		{
-			//cout << "Red block on the screen" << endl;
-			destroyAllWindows();
-			cap.release();
-			return 'a';
-
-		}
-
-
-		//cout << frame;
-		frame++;
-		if (frame == 5)
-		{
-			frame = 0;
-			destroyAllWindows();
-			cap.release();
-			return 'e';
-		}
-	}
-}
-
-
-
-char blueDetect()
-{
-	VideoCapture cap(0); //capture the video from webcam
-	int iLowH = 65;
-	int iHighH = 115;
-	int iLowS = 63;
-	int iHighS = 255;
-	int iLowV = 60;
-	int iHighV = 255;
-
-	//Capture a temporary image from the camera
-	Mat imgTmp;
-	cap.read(imgTmp);
-
-	//Create a black image with the size as the camera output
-	Mat imgLines = Mat::zeros(imgTmp.size(), CV_8UC3);;
-
-	while (true)
-	{
-		Mat imgOriginal;
-
-		bool bSuccess = cap.read(imgOriginal); // read a new frame from video
-
-
-
-		if (!bSuccess) //if not success, break loop
-		{
-			cout << "Cannot read a frame from video stream Blue" << endl;
-			break;
-		}
-
-		Mat imgHSV;
-
-		cvtColor(imgOriginal, imgHSV, COLOR_BGR2HSV); //Convert the captured frame from BGR to HSV
-
-		Mat imgThresholded;
-
-		inRange(imgHSV, Scalar(iLowH, iLowS, iLowV), Scalar(iHighH, iHighS, iHighV), imgThresholded); //Threshold the image
-
-																									  //morphological opening (removes small objects from the foreground)
-		erode(imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(5, 5)));
-		dilate(imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(5, 5)));
-
-		//morphological closing (removes small holes from the foreground)
-		dilate(imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(5, 5)));
-		erode(imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(5, 5)));
-
-		counter = countNonZero(imgThresholded);
-
-		if (counter > 35000)
-		{
-			//cout << "Blue block on the screen" << endl;
-			cap.release();
-			destroyAllWindows();
-			return 'c';
-		}
-
-
-		//cout << frame;
-		frame++;
-		if (frame == 5)
-		{
-			frame = 0;
-			destroyAllWindows();
-			cap.release();
-			return 'e';
-		}
-	}
-}
-
-
-
-char greenDetect()
-{
-	VideoCapture cap(0); //capture the video from webcam
-	int iLowH = 36;
-	int iHighH = 55;
-	int iLowS = 45;
-	int iHighS = 255;
-	int iLowV = 60;
-	int iHighV = 255;
-
-	//Capture a temporary image from the camera
-	Mat imgTmp;
-	cap.read(imgTmp);
-
-	//Create a black image with the size as the camera output
-	Mat imgLines = Mat::zeros(imgTmp.size(), CV_8UC3);;
-
-	while (true)
-	{
-		Mat imgOriginal;
-
-		bool bSuccess = cap.read(imgOriginal); // read a new frame from video
-
-
-
-		if (!bSuccess) //if not success, break loop
-		{
-			cout << "Cannot read a frame from video stream GREEN" << endl;
-			break;
-		}
-
-		Mat imgHSV;
-
-		cvtColor(imgOriginal, imgHSV, COLOR_BGR2HSV); //Convert the captured frame from BGR to HSV
-
-		Mat imgThresholded;
-
-		inRange(imgHSV, Scalar(iLowH, iLowS, iLowV), Scalar(iHighH, iHighS, iHighV), imgThresholded); //Threshold the image
-
-																									  //morphological opening (removes small objects from the foreground)
-		erode(imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(5, 5)));
-		dilate(imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(5, 5)));
-
-		//morphological closing (removes small holes from the foreground)
-		dilate(imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(5, 5)));
-		erode(imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(5, 5)));
-
-		counter = countNonZero(imgThresholded);
-
-		if (counter > 35000)
-		{
-			//cout << "Green block on the screen" << endl;
-			cap.release();
-			destroyAllWindows();
-			return 'd';
-		}
-
-
-		//cout << frame;
-		frame++;
-		if (frame == 5)
-		{
-			frame = 0;
-			destroyAllWindows();
-			cap.release();
-			return 'e';
-		}
-	}
-}
-
-
-
-char yellowDetect()
-{
-	VideoCapture cap(0); //capture the video from webcam
-	int iLowH = 15;
-	int iHighH = 36;
-	int iLowS = 130;
-	int iHighS = 255;
-	int iLowV = 105;
-	int iHighV = 255;
-
-	//Capture a temporary image from the camera
-	Mat imgTmp;
-	cap.read(imgTmp);
-
-	//Create a black image with the size as the camera output
-	Mat imgLines = Mat::zeros(imgTmp.size(), CV_8UC3);;
-
-	while (true)
-	{
-		Mat imgOriginal;
-
-		bool bSuccess = cap.read(imgOriginal); // read a new frame from video
-
-
-
-		if (!bSuccess) //if not success, break loop
-		{
-			cout << "Cannot read a frame from video stream YELLOW" << endl;
-			break;
-		}
-
-		Mat imgHSV;
-
-		cvtColor(imgOriginal, imgHSV, COLOR_BGR2HSV); //Convert the captured frame from BGR to HSV
-
-		Mat imgThresholded;
-
-		inRange(imgHSV, Scalar(iLowH, iLowS, iLowV), Scalar(iHighH, iHighS, iHighV), imgThresholded); //Threshold the image
-
-																									  //morphological opening (removes small objects from the foreground)
-		erode(imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(5, 5)));
-		dilate(imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(5, 5)));
-
-		//morphological closing (removes small holes from the foreground)
-		dilate(imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(5, 5)));
-		erode(imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(5, 5)));
-
-		counter = countNonZero(imgThresholded);
-
-		if (counter > 35000)
-		{
-			//cout << "Yellow block on the screen" << endl;
-			cap.release();
-			destroyAllWindows();
-			return 'b';
-		}
-
-		//cout << frame;
-		frame++;
-		if (frame == 5)
-		{
-			frame = 0;
-			destroyAllWindows();
-			cap.release();
-			return 'e';
-		}
-	}
-}
