@@ -9,16 +9,8 @@ using namespace std;
 class CV
 {
 public:
+	//VideoCapture cap;
 	int counter=0;
-	int frame=0;
-	VideoCapture cap;
-	Mat imgTmp;
-	CV();
-	//char redDetect();
-	//char blueDetect();
-	//char greenDetect();
-	//char yellowDetect();
-	//char colourChooser();
-	char colourDetector(int,int,int,int,int,int);
+	char colourDetector();
 	char colourPicker();
 };
