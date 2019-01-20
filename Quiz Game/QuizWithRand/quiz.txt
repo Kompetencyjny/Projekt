@@ -1,360 +1,360 @@
-Typ zmiennych o nazwie float przechowuje:
-liczby calkowite
-napisy
-liczby zmiennoprzecinkowe
-pojedyncze znaki
-c
-Wstrzymanie wykonania programu na czas 2 sekund uzyskasz instrukcja:
-Wait(2000)
-Stop(2000)
-Delay(2000)
-Sleep(2000)
-d
-Ktora deklaracja jest zapisana poprawnie?
-int x;
-integer x;
-x:integer;
-x=integer;
-a
-Z jakiego przedzialu zostanie wylosowana liczba: rand()%10+2
-0..9
-2..9
-2..11
-0..11
-c
-Ile razy wykona sie petla: for (int i=4; i>=-2; i--)
-ani razu
-nieskonczenie wiele razy
-6
+Total number of continents in the World is:
 7
-d
-Kto wygral 49 Turniej Czterech Skoczni?
-Martin Schmitt
-Sven Hannawald
-Adam Malysz
-Janne Ahonen
-c
-Ile wynosi najdluzszy i ustany skok?
-240m
-239.5m
-248.5m
-246.5m
-d
-Ile razy Adam Malysz wygral Puchar Swiata?
-1
-2
-3
-4
-d
-Ile zwyciestw ma Gregor Schlierenzauer? (do dnia 13-01-2014)
-52
-49
-32
-55
-a
-Ile zlotych medali olimijskich ma Simon Ammann?
-4
-3
-2
-1
-a
-W systemach operacyjnych wiersz polecen oznaczamy skrotem
-CLP (ang. command line process)
-CLU (ang. command line user)
-CLO (ang. command line Open)
-CLI (ang. command line interface)
-d
-Ktore z podanych rozszerzen nalezy do pliku graficznego?
-.aif
-.png
-.swa
-.wav
-b
-Symbol klodki oznaczajacy polaczenie szyfrowane jest charakterystyczny dla protokolu:
-HTTP
-SSH
-FTP
-SSL
-d
-Domyslne profile uzytkownikow Windows XP sa przechowywane w folderze
-Roaming User Profile - na partycji rozruchowej.
-Documents and Settings.
-Profile - na partycji dodatkowej.
-Macierzystym - w pierwszym sektorze dysku twardego.
-b
-Ktora kombinacja klawiszy powoduje zaznaczenie wszystkich obiektow w otwartym folderze w Systemie Windows:
-Ctrl + O
-Ctrl + A
-Ctrl + X
-Ctrl + Z
-b
-Jak sa nazwane poszczegolne struny w gitarze?
-a,b,c,d,e,f
-E,a,d,g,h,e
-C,D,E,F,G,A
-E,d,c,h,a,g
-b
-Ktory z ponizszych akordow jest BAROWY?
-C
-A
-F
-D
-c
-Ktory z ponizszych akordow jest DUROWY?
-E
-e
-fis
-f6
-a
-Ile jest stron wiolinowych a ile basowych?
-2-basowe, 4-wiolinowe
-4-basowe, 2-wiolinowe
-1-basowe, 5-wiolinowych
-3-basowe, 3-wiolinowe
-d
-Czy G-dur to akord Basowy?
-Tak
-Nie
-Niema takiego akordu
-Mozna ten akord zagrac i tak i tak
-d
-Energia elektryczna w elektrowni jadrowej powstaje poprzez:
-uran ktory sam w sobie wytwarza energie elektryczna
-reakcje chemiczna uranu/plutonu z woda
-poruszanie wirnikow przez pare
-grupe naukowcow ktorzy kreca dynamo
-c
-Wypromieniowanie czasteczki helu z innej czasteczki to inaczej promieniowanie:
-alfa
-beta
-mikrofalowe
-jonizujace
-a
-Wybuch elektrowni w Czarnobylu byl:
-wybuchem podlozonej bomby
-wybuchem jadrowym
-wybuchem bomby biologicznej
-wybuchem pary wodnej
-d
-Plyn, ktory hamuje czynnosci tarczycy to:
-coca-cola
-lugola
-Woda demineralizowana
-zantho
-c
-Pierwsza bombe atomowa skonstruowali:
-Rosjanie
-Amerykanie
-Chinczycy
-Polacy
-b
-Whisky Jack Daniel's powstaje w:
-Warszawie
-Waszyngtonie
-Lynchburgu
-Wisconsin
-c
-Jesli chcemy wyprodukowac Gin, do zacieru nalezy dodac:
-jagody jalowca
-piolun
-kore debowa
-liscie klonu
-a
-Wzor ogolny alkoholu etylowego to:
-CH3OH
-C2H5OH
-HCOOH
-C6H13OH
-b
-Jak nazywa sie proces produkcji miodu pitnego:
-miodosytnia
-miodowanie
-miodalnosc
-miodosytnictwo
-d
-Ktora marka wodki w Polsce oferuje najszersza game smakow:
-Lubelska
-Stock
-Zytnia
-BOLS
-a
-Jack Daniel's produkuje whisky okreslana jako 'single barrel'. Oznacza to, ze:
-whisky zostala stworzona przez mieszanie roznych partii
-whisky zostala stworzona przez mieszanie jednej partii
-whisky pochodzi z tylko jednej beczki
-whisky zostala stworzona z pieciu beczek trzech ostatnich partii
-c
-Jasiem Wedrowniczkiem nazywamy:
-whisky Red Label
-wino francuskie Cotes du Rhone
-wino ryzowe, ktore przyszlo do nas z Azji
-wodke marki Krajowa
-a
-Ile czasu wedlug tradycji musi odlezec 'szkocka' zanim zostanie rozlana do butelek:
-rok
-dwa lata
-trzy lata
-dziesiec lat
-b
-Glownym skladnikiem Ajerkoniaku sa:
-jajka
-majonez
-czarna herbata
-trufle
-a
-Ulubionym napojem francuskich dekadentow byla:
-wodka
-zielona herbata z whisky
-woda mineralna
-zielona wrozka
-d
-Zielona Wrozka to inaczej:
-absynt
-sliwowica
-Tequila
-Cachaca
-a
-Wskaz prawidlowe rownanie fermentacji alkoholowej:
-cukier + ziemniaki -> alkohol
-Woda + drozdze -> alkohol
-cukier + drozdze -> alkohol
-alkohol + sok jablkowy -> denaturat
-c
-Wskaz prawidlowa liste najpopularniejszych rytualow spozywania absyntu:
-rytual: ognia, ziemi, wody
-rytual: cyklonu, ognia, ziemi
-rytual: powietrza, polski, wody
-rytual: ognia, powietrza, wody
-d
-Kahlua to:
-likier na bazie kawy
-likier kokosowy z dodatkiem dzikiej rozy
-likier na bazie jablek i cynamonu
-likier jablkowy
-a
-Likier pomaranczowy nazywany jest:
-Baileys
-Manzana
-Passoa
-Cointreau
-d
-Matrix to dzielo rezyserskie:
-David Lynch
-L.A. Wachowski
-Christopher Nolan
-Steven Spielberg
-b
-Kto zdradzil towarzyszy w pierwszym Matrixie?
-Cypher
-Dozer
-Tank
-Niobe
-d
-Jak nazywa sie ostatnie ludzkie miasto, ktore chca zniszczyc maszyny?
-Nabuchodonozor
-Zion
-Logos
-Village
-b
-Ktorym z kolei Wybrancem byl Neo?
-3
-4
 5
 6
-d
-Jak nazywal sie program broniacy Wyroczni? 
-Train man
-Merowing
-Klucznik
-Serafin
-d
-Ile dni Lazarz przebywal w grobie, zanim go wskrzeszono?
-2
-3
-4
-5
-c
-Ile srebrnikow otrzymal Judasz za zdrade Jezusa?
-12
-20
-24
-30
-d
-Ile dni Jonasz przebywal we wnetrznosciach ryby?
+9
+a
+Total number of oceans in the World is:
 3
 7
+5
 12
-14
-a
-Ile zon mial Salomon?
-1
-2
-30
-700
-d
-Jaki aniol ukazal sie Maryi przy tzw. zwiastowaniu anielskim?
-Michal
-Gabriel
-Rafael
-Raziel
-b
-Kto byl selekcjonerem reprezentacji Polski? 
-Jacek Gmoch
-Grzegorz Lato
-Kazimierz Deyna
-Wlodzimierz Lubanski
-a
-Kto wygral Mistrzostwa Swiata w 2002 roku?
-Francja
-Brazylia
-Hiszpania
-Niemcy
-b
-Jakie najwyzsze miejsce Polska uzyskala na Mistrzostwach Swiata?
-6
-4
-3
-2
 c
-Kto zwyciezyl w plebiscycie i otrzymal Zlota Pilke w roku 2000?
-Luis Figo
-Zinedine Zidane
-Ronaldo
-Rivaldo
-a
-Ktora druzyna zdobyla najwiecej tytulow Mistrza Polski?
-Ruch Chorzow
-Legia Warszawa
-Wisla Krakow
-Lech Poznan
-a
-Europa: Jaka jest stolica Moldawii? 
-Tallin
-Vaduz
-Kiszyniow
-Bukareszt
-c
-Azja: Jaka jest stolica Kambodzy? 
-Phnom Penh
-Rangun
-Aszchabad
-Taszkent
-a
-Afryka: Jaka jest stolica Nigerii? 
-Nairobi
-Luanda
-Aszchabad
-Abudza
+Which one is the largest ocean in the World:
+Indian
+Pacific
+Atlantic
+Arctic
+b
+Which one is the smallest ocean in the World
+Indian
+Pacific
+Atlantic
+Arctic
 d
-Ameryka Poludniowa: Jaka jest stolica Chile? 
-Asuncion
-La Paz
+Dead Sea is located between which two countries
+Jordan and Israel 
+Jordan and Sudan
+Turkey and UAE
+UAE and Egypt
+a
+Which country gifted the 'Statue of Liberty' to USA in 1886
+Canada
+Brazil
+French
+England
+c
+In which ocean 'Bermuda Triangle' region is located
+Indian
+Atlantic
+Pacific
+Arctic
+b
+Which country is also known as 'Land of the Midnight Sun'
+Geenland
+Norway
+Iceland
+Ireland
+b
+Which country is known as the 'playground of Europe'
+Autria
+Holland
+Italy
+Switzerland
+d
+Which country is also known as the 'Land of Rising Sun'
+New Zealand
+Fiji
+Japan
+China
+c
+Which country is also known as the 'Land of Thousand Lakes'
+Iceland
+Norway
+Switzerland
+Finland
+d
+Which country is known as the 'Land of Thunderbolts'
+Bhutan
+ China
+Mongolia
+Thailand
+a
+In which country, white elephant is found
+India
+Thailand
+Sri Lanka
+Malaysia
+b
+Which country is the largest producer of coffee in the World
+Vietnam
+Brazil
+Colombia
+Mexico
+b
+Mount Etna, one of the most active volcano in the World is located in
+Italy
+Japan
+Peru
+Fiji
+a
+Which country is also known as the 'Land of Tulips'
+Italy
+Switzerland
+Natherland
+Greece
+c
+Which country has the highest number of internet users in World
+USA
+India
+Japan
+China
+d
+Which phone company used the android application for the first time
+Google
+Nokia
+Samsung
+HTC
+d
+Where the headquater of 'Google' is located
+Arizon
+NewYork
+California
+Ohio
+c
+Who is the founder of WikiLeaks
+Julia Gillard
+Julian Assange
+Mark Zuckerberg
+David Leigh
+b
+Which one is the longest river in America
+Colorado River
+Columbia River
+Missouri River
+Mississippi River
+c
+The contruction of Eiffel Tower was completed in the year
+1889
+1858
+1906
+1910
+a
+The headquater of Mercedes-Benz is located in
+Tokyo
+London
+Berlin
+Stuttgart
+d
+Las Vegas city is located in the US state of
+Nevada
+Arizona
+Colorado
+Texas
+a
+Which one is the capital of Spain
+Barcelona
+Madrid
+Seville
+Lisbon
+b
+World Environment Day is observed every year on
+13th January
+26th August
+30th September
+5th June
+d
+The historic city of 'Machu Picchu' is located in the country
+Bolivia
+Uruguay
+Argentina
+Peru
+d
+First American President to win a Nobel Peace Prize
+Theodore Roosevelt
+Woodrow Wilson
+Barack Obama
+Jimmy Carter
+a
+Which european country is surrounded by most number of neighbouring countries
+Germany
+Russia
+Austria
+Denmark
+a
+Transylvania is a part of which country
+Poland
+Romania
+Hungary
+Austria
+b
+European Union was established as a result of
+Treaty of Paris, 1951
+New York Agreement
+Paris Peace Accords
+18
+a
+Mount Kilimanjaro which is the highest mountain in Africa is located in
+Tanzania
+Egypt
+South Africa
+Congo
+a
+Which was the first country to introduce VAT
+England
+France
+USA
+Japan
+b
+Total number of members in European Union is
+22
+26
+28
+31
+c
+Which country is the largest producer of cotton
+India
+Pakistan
+Brazil
+China
+d
+Warsaw is the capital of
+Czech Republic
+Poland
+Lithuania
+Ukraine
+b
+What is willy-willy
+A tropical cyclone of north-west Australia
+A type of computer virus
+A name of a missile
+A kind of sharp-needle
+a
+The second largest Island (next to Greenland) of the World is
+Borneo
+New Guinea
+Sumatra
+Malagasy
+b
+Which one is the most populous city in South America
+Brasília
+Lima
+Sao Paulo
 Santiago
-Montevideo
 c
-Australia i Oceania: Jaka jest stolica Nowej Zelandii? 
-Wellington
-Port Moresby
-Suwa
-Apia
+Kimono is a dress style of which Asian Country
+Laos
+China
+Japan
+Korea
+c
+Which one is the most saline water body in the world
+Lake Urmia
+Gaet'ale Pond
+Lake Assal
+Don Juan Pond
+d
+Rand is the currency of
+Romania
+South Africa
+Iran
+Namibia
+b
+The World famous monument "Colosseum" is located in
+Spain
+Italy
+Austria
+France
+b
+In which of the following countries, you will find the Ural Mountains
+Germany
+Russia
+Brazil
+Peru
+b
+'Ikebana' is a Japanese art of
+Dressing
+Flower Arrangement
+Paper Craft
+None of the above
+b
+The popular social dance 'Salsa' is originated from
+Brazil
+Italy
+Mexico
+America
+d
+Havana is the capital of
+Cuba
+Brazil
+Argentina
+Canada
 a
+Which international organisation was created as a result of North Atlantic Treaty, 1949
+WTO
+NATO
+UNESCO
+UN
+b
+Which one is the first country to allow women to vote
+Australia
+New Zealand
+Canada
+America
+b
+The island 'Bali', famous as tourist spot, is a part of which country
+Indonesia
+Malaysia
+South Korea
+Sri Lanka
+a
+All Nobel Prizes except the Peace Prize is given at the city
+Oslo
+Stockholm
+Bern
+Zurich
+b
+Which country has the World's largest prison population
+India
+China
+USA
+Brazil
+c
+International Woman's Day is celebrated on
+2nd January
+5th April
+8th March
+15th September
+c
+Which one is the biggest waterfall in Niagara Falls
+Horseshoe Falls
+American Falls
+Bridal Veil Falls
+None of the above
+a
+In which country, Yellowstone National Park is located
+Russia
+Canada
+Brazil
+USA
+d
+Which country has the most number of lakes
+Canada
+USA
+Finland
+Brazil
+a
+Only continent in the world without a desert is
+North America
+Asia
+Africa
+Europe
+d
+The headquaters of World bank is located at
+New York
+Washington
+Paris
+Berlin
+b
+Which one is the largest slum area in World
+Dharavi, Mumbai
+Orangi, Karachi
+Neza-Chalco-Itza, Mexico
+None of the above
+c
+The central administrative office for Euro currency is located at
+London
+Frankfurt
+Madrid
+Zurich
+b
